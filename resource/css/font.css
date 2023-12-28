@@ -10,6 +10,12 @@ body {
 
 }
 
+:root {
+    --tc1: black;
+    --tc2: rgb(86, 86, 86);
+    --tc3: rgb(160, 160, 160);
+}
+
 .fw-900 {
     font-weight: 900;
 }
@@ -44,4 +50,16 @@ body {
 
 .fw-100 {
     font-weight: 100;
+}
+
+.tc1 {
+    color: var(--tc1);
+}
+
+.tc2 {
+    color: var(--tc2);
+}
+
+.tc3 {
+    color: var(--tc3);
 }

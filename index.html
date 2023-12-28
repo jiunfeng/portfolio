@@ -27,7 +27,7 @@
     /* .bg-light {
         
     } */
-    .row {
+    .container-fluid .row {
         min-height: calc(100vh - 68px);
         /* min-height: 100vh; */
         padding-top: 68px;
@@ -36,8 +36,10 @@
 
     .home {
         background: #eee;
+    }
 
-
+    .home .colcol {
+        background-color: pink;
     }
 
     .experience {
@@ -106,7 +108,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link fs-5" aria-current="page" href="#">Home</a>
+                        <a class="nav-link fs-5 active click" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5" aria-current="page" href="#experience">Experience</a>
@@ -133,20 +135,17 @@
     </nav>
     <!-- /navbar -->
     <div class="container-fluid">
-        <div class="row home" id="topbar">
-
-            <h1>故事環保不到，什麼是看了超級電視成果社區是由楠雅本站插入近日哈哈，審
-                核都能經理太陽長期一張環節降價規則一半故障上一頁，不怕設立訂單漂亮責任熟悉之
-                處僅供玻璃降低參加住了，他人營銷項目政策反饋浙江目標怎樣批發看來網絡減少
-                編輯天使淡淡，原理協助搜尋引擎經驗積分。
-            </h1>
-            <p class="fs-1">
-                像是革命出席春天奧客免費版鄉民但我電池動漫在我手指，完了地圖一塊
-                戰鬥左右這次一顆中文，還是這個一生，這個公里收到大概勝利靈魂
-                部落反對你想嚴重字幕，舉報我想現有同學一口章節以外技能地下一下子
-                ，指南之下反應既然請教打電話措施，糖尿病金融檢查責任將會從事，無限。
-            </p>
-
+        <div class="row home p-0" id="topbar">
+            <div class="col p-5 d-flex flex-column justify-content-center">
+                <h4 class="" style="font-size: 3.4rem;">
+                    <span class="bg-success">Hello!I am</span>
+                    <span class="fst-italic fw-200 ps-2">曾濬楓</span>
+                </h4>
+                <h1 class="fw-900" style="font-size: 5.2rem;">MARCUS TZENG</h3>
+                    <h5 class="tc3" style="font-size: 2.8rem;">DevOps Developer</h5>
+                    <br><br><br><br><br><br><br><br>
+            </div>
+            <div class="colcol col p-5"></div>
         </div>
         <div class="row experience" id="experience">
             <h1>experience</h1>
@@ -202,6 +201,9 @@
                     elementElse.classList.remove('active', 'click');
                 })
                 element.classList.add('active');
+                // 直接加入class因js單線程不會渲染，需要異步
+                // requestAnimationFrame setTimeout 二擇一
+                // setTimeout可以在最後加入需要延遲時間
                 // element.classList.add('click');
                 // requestAnimationFrame(function () {
                 //     element.classList.add('click');
