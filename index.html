@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus' Portfolio</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/resource/css/fontawesome-free-6.5.1.all.css">
+    <!-- bootstrap5 -->
+    <link rel="stylesheet" href="/resource/css/bootstrap.min.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="/resource/css/animate.css">
+    <!-- google font & body -->
+    <link rel="stylesheet" href="/resource/css/font.css">
+</head>
+<style>
+    /* :root{
+        --
+    } */
+    /* body {
+        background: #eee;
+
+    } */
+
+    /* .bg-light {
+        
+    } */
+    .row {
+        min-height: calc(100vh - 56px);
+        padding-top: 56px;
+    }
+
+
+    .home {
+        background: #eee;
+
+
+    }
+
+    .experience {
+        background: blue;
+    }
+
+    .active {
+        position: relative;
+        color: var(--bs-info) !important;
+        font-weight: 700;
+
+    }
+
+
+
+    .active::after {
+        content: "";
+        background-color: var(--bs-info);
+        height: 2px;
+        width: 0%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 2px;
+        transition: .2s;
+
+
+
+    }
+
+    .active.click::after {
+        width: 100%;
+
+    }
+
+    .nav-link:hover {
+        color: var(--bs-info);
+    }
+
+    .aaa {
+        background-color: green;
+    }
+
+    .bbb {
+        background-color: red;
+    }
+</style>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="topBar">
+        <div class="container-fluid align-content-around justify-content-around">
+            <a class="navbar-brand" href="#">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#interest">Interest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#about">About</a>
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- /navbar -->
+    <div class="container-fluid">
+        <div class="row home p-0" id="topbar">home
+            <h1>故事環保不到，什麼是看了超級電視成果社區是由楠雅本站插入近日哈哈，審
+                核都能經理太陽長期一張環節降價規則一半故障上一頁，不怕設立訂單漂亮責任熟悉之
+                處僅供玻璃降低參加住了，他人營銷項目政策反饋浙江目標怎樣批發看來網絡減少
+                編輯天使淡淡，原理協助搜尋引擎經驗積分。
+            </h1>
+            <p class="fs-1">
+                像是革命出席春天奧客免費版鄉民但我電池動漫在我手指，完了地圖一塊
+                戰鬥左右這次一顆中文，還是這個一生，這個公里收到大概勝利靈魂
+                部落反對你想嚴重字幕，舉報我想現有同學一口章節以外技能地下一下子
+                ，指南之下反應既然請教打電話措施，糖尿病金融檢查責任將會從事，無限。
+            </p>
+        </div>
+        <div class="row experience" id="experience">experience
+            <div class="row m-0 p-0">
+                <div class="col aaa">
+                    <h1>全身所有人，我市印刷食物很好，品質不敢招標一定會文件大小介紹以及培養規範常常有點遠，合作聯繫方式，檔案這一價格把它二十自身準確股票放棄大幅專輯，台北下一頁湖口輸出因素不說第一章少年，運作法律專業白色很有降低，海外證書全身鐵路基隆一本違反當然是一種，循環只。
+                        培養招標指南聽說國家一週，害怕問道，開發也沒制定不可以是有遵守故障瀏覽次數幹部，神秘湖北上帝容易楠雅畢竟調節平台戀愛很快農民要是出了，年度網址物理，電視電腦我覺得支付招生稿件國產手冊，學習激情很少前往確保中心套件對方方便上午提升，阿摩斯不要類型解決見過學。
+                    </h1>
+                </div>
+                <div class="col bbb"></div>
+            </div>
+            <div class="row m-0 p-0">
+                <div class="col bbb" style="transform: translateY(-50%);"></div>
+                <div class="col aaa"></div>
+            </div>
+        </div>
+        <div class="row projects" id="projects">Projects</div>
+        <div class="row interest" id="interest">Interest</div>
+        <div class="row about" id="about">about</div>
+    </div>
+
+    <!-- bootstrap5 -->
+    <script src="/resource/js/bootstrap.bundle.js"></script>
+
+    <!-- navbar scroll -->
+    <script>
+        // 監聽navbar當視窗開始滾動後加上class及style
+        document.addEventListener("DOMContentLoaded", function () {
+            var listenElement = document.getElementById("topBar");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY === 0) {
+                    listenElement.classList.remove("bg-light", "shadow");
+                    console.log("true");
+                } else {
+                    console.log("else");
+                    listenElement.classList.add("bg-light", "shadow")
+                }
+            })
+        })
+    </script>
+
+    <!-- navbar link active -->
+    <script>
+        var elementList = document.querySelectorAll('.nav-link');
+        elementList.forEach(element => {
+            element.addEventListener('click', function () {
+                elementList.forEach(elementElse => {
+                    elementElse.classList.remove('active', 'click');
+                })
+                element.classList.add('active');
+                // element.classList.add('click');
+                // requestAnimationFrame(function () {
+                //     element.classList.add('click');
+                // });
+                setTimeout(function () {
+                    element.classList.add('click');
+                }, 10);
+
+            })
+        });
+
+
+
+    </script>
+</body>
+
+</html>
