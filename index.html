@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/resource/css/animate.css">
     <!-- google font & body -->
     <link rel="stylesheet" href="/resource/css/font.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <style>
     /* :root{
@@ -27,8 +28,9 @@
         
     } */
     .row {
-        min-height: calc(100vh - 56px);
-        padding-top: 56px;
+        min-height: calc(100vh - 68px);
+        /* min-height: 100vh; */
+        padding-top: 68px;
     }
 
 
@@ -57,8 +59,8 @@
         height: 2px;
         width: 0%;
         position: absolute;
-        bottom: 0;
-        left: 0;
+        bottom: 6px;
+        left: 5px;
         border-radius: 2px;
         transition: .2s;
 
@@ -67,8 +69,12 @@
     }
 
     .active.click::after {
-        width: 100%;
+        width: calc(100% - 10px);
 
+    }
+
+    .nav-link {
+        margin-left: 50px;
     }
 
     .nav-link:hover {
@@ -87,29 +93,34 @@
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light" id="topBar">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light p-0" id="topBar">
         <div class="container-fluid align-content-around justify-content-around">
-            <a class="navbar-brand" href="#">Portfolio</a>
+            <a class="navbar-brand p-1">
+                <img src="/resource/img/logo.png" alt="" width="170" height="60" class="d-inline-block align-text-top">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#experience">Experience</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#experience">Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#projects">Projects</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#projects">Projects</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fs-5">
+                        <a class="nav-link" aria-current="page" href="#skill">Skill</a>
+                    </li>
+                    <li class="nav-item fs-5">
                         <a class="nav-link" aria-current="page" href="#interest">Interest</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item fs-5">
                         <a class="nav-link" aria-current="page" href="#about">About</a>
                     </li>
 
@@ -122,7 +133,8 @@
     </nav>
     <!-- /navbar -->
     <div class="container-fluid">
-        <div class="row home p-0" id="topbar">home
+        <div class="row home" id="topbar">
+
             <h1>故事環保不到，什麼是看了超級電視成果社區是由楠雅本站插入近日哈哈，審
                 核都能經理太陽長期一張環節降價規則一半故障上一頁，不怕設立訂單漂亮責任熟悉之
                 處僅供玻璃降低參加住了，他人營銷項目政策反饋浙江目標怎樣批發看來網絡減少
@@ -134,8 +146,10 @@
                 部落反對你想嚴重字幕，舉報我想現有同學一口章節以外技能地下一下子
                 ，指南之下反應既然請教打電話措施，糖尿病金融檢查責任將會從事，無限。
             </p>
+
         </div>
-        <div class="row experience" id="experience">experience
+        <div class="row experience" id="experience">
+            <h1>experience</h1>
             <div class="row m-0 p-0">
                 <div class="col aaa">
                     <h1>全身所有人，我市印刷食物很好，品質不敢招標一定會文件大小介紹以及培養規範常常有點遠，合作聯繫方式，檔案這一價格把它二十自身準確股票放棄大幅專輯，台北下一頁湖口輸出因素不說第一章少年，運作法律專業白色很有降低，海外證書全身鐵路基隆一本違反當然是一種，循環只。
@@ -149,7 +163,12 @@
                 <div class="col aaa"></div>
             </div>
         </div>
-        <div class="row projects" id="projects">Projects</div>
+        <div class="row projects" id="projects">
+            <h1>Project</h1>
+        </div>
+        <div class="row skill" id="skill">
+            <h1>Skill</h1>
+        </div>
         <div class="row interest" id="interest">Interest</div>
         <div class="row about" id="about">about</div>
     </div>
