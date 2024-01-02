@@ -27,7 +27,7 @@
     /* .bg-light {
         
     } */
-    .container-fluid .row {
+    .container-fluid .home {
         min-height: calc(100vh - 68px);
         /* min-height: 100vh; */
         padding-top: 68px;
@@ -38,13 +38,7 @@
         background: #eee;
     }
 
-    .home .colcol {
-        background-color: pink;
-    }
 
-    .experience {
-        background: blue;
-    }
 
     .active {
         position: relative;
@@ -52,8 +46,6 @@
         font-weight: 700;
 
     }
-
-
 
     .active::after {
         content: "";
@@ -83,12 +75,54 @@
         color: var(--bs-info);
     }
 
-    .aaa {
-        background-color: green;
+    .time-line {
+        position: relative;
     }
 
-    .bbb {
-        background-color: red;
+    .time-line::before {
+        position: absolute;
+        content: "";
+        width: 5px;
+        background: linear-gradient(to bottom, hsl(0, 100%, 90%, 1), hsl(120, 100%, 90%, 0.1));
+        height: 100%;
+        right: 50%;
+        transform: translateX(50%);
+
+    }
+
+    .time-line-point::before {
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 15px;
+        background: linear-gradient(to bottom, hsl(0, 100%, 90%), hsl(120, 100%, 90%));
+        right: 50%;
+        transform: translateX(50%);
+
+    }
+
+    .time-line-point:hover::before {
+        background: black;
+    }
+
+    .card-left {
+        margin-bottom: 50px;
+    }
+
+    .card-right {
+        margin-top: 50px;
+    }
+
+    .card-up-01 {
+        transform: translateY(-40%);
+    }
+
+    .card-up-02 {
+        transform: translateY(-80%);
+    }
+
+    .card-up-03 {
+        transform: translateY(-120%);
     }
 </style>
 
@@ -135,6 +169,7 @@
     </nav>
     <!-- /navbar -->
     <div class="container-fluid">
+        <!-- home -->
         <div class="row home p-0" id="topbar">
             <div class="col p-5 d-flex flex-column justify-content-center">
                 <h4 class="" style="font-size: 3.4rem;">
@@ -145,23 +180,105 @@
                     <h5 class="tc3" style="font-size: 2.8rem;">DevOps Developer</h5>
                     <br><br><br><br><br><br><br><br>
             </div>
-            <div class="colcol col p-5"></div>
         </div>
+        <!-- /home -->
+        <!-- experience -->
         <div class="row experience" id="experience">
-            <h1>experience</h1>
-            <div class="row m-0 p-0">
-                <div class="col aaa">
-                    <h1>全身所有人，我市印刷食物很好，品質不敢招標一定會文件大小介紹以及培養規範常常有點遠，合作聯繫方式，檔案這一價格把它二十自身準確股票放棄大幅專輯，台北下一頁湖口輸出因素不說第一章少年，運作法律專業白色很有降低，海外證書全身鐵路基隆一本違反當然是一種，循環只。
-                        培養招標指南聽說國家一週，害怕問道，開發也沒制定不可以是有遵守故障瀏覽次數幹部，神秘湖北上帝容易楠雅畢竟調節平台戀愛很快農民要是出了，年度網址物理，電視電腦我覺得支付招生稿件國產手冊，學習激情很少前往確保中心套件對方方便上午提升，阿摩斯不要類型解決見過學。
-                    </h1>
+            <div class="container mt-5 time-line">
+                <div class="row">
+                    <!-- experience left -->
+                    <div class="col flex-column-reverse">
+                        <div class="col d-flex justify-content-end mb-5">
+                            <div class="card mb-3 card-left" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="..." alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex justify-content-end mb-5">
+                            <div class="card mb-3 card-left" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="..." alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /experience left -->
+                    <!-- experience right -->
+                    <div class="col flex-column-reverse">
+                        <div class="col card-right">
+                            <div class="card mb-3 " style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="..." alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col card-right">
+                            <div class="card mb-3 " style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="..." alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit
+                                                longer.</p>
+                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /experience right -->
                 </div>
-                <div class="col bbb"></div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col bbb" style="transform: translateY(-50%);"></div>
-                <div class="col aaa"></div>
+
+
+
+
             </div>
         </div>
+        <!-- /experience -->
         <div class="row projects" id="projects">
             <h1>Project</h1>
         </div>
@@ -183,9 +300,9 @@
             window.addEventListener("scroll", function () {
                 if (window.scrollY === 0) {
                     listenElement.classList.remove("bg-light", "shadow");
-                    console.log("true");
+                    // console.log("true");
                 } else {
-                    console.log("else");
+                    // console.log("else");
                     listenElement.classList.add("bg-light", "shadow")
                 }
             })
@@ -214,10 +331,46 @@
 
             })
         });
+    </script>
+    <!-- card animate -->
+    <script>
+        const cardElement = document.querySelectorAll('.card')
+        window.addEventListener('scroll', () => {
+            cardElement.forEach((element, index) => {
+                const elRect = element.getBoundingClientRect()
 
+
+                if (element.classList.contains('card-left')) {
+                    if (elRect.top <= window.innerHeight) {
+                        element.classList.add('animate__animated', 'animate__fadeInLeft')
+                        element.addEventListener("animationend", () => {
+                            element.parentElement.classList.add('time-line-point')
+                            console.log('456');
+                        });
+                    } else {
+                        element.classList.remove('animate__animated', 'animate__fadeInLeft')
+                        element.parentElement.classList.remove('time-line-point')
+                    }
+                } else {
+                    if (elRect.top <= window.innerHeight) {
+
+                        element.classList.add('animate__animated', 'animate__fadeInRight')
+                        element.addEventListener("animationend", () => {
+                            element.parentElement.classList.add('time-line-point')
+
+                        });
+                    } else {
+                        element.classList.remove('animate__animated', 'animate__fadeInRight')
+                        element.parentElement.classList.remove('time-line-point')
+                    }
+                }
+
+            })
+        })
 
 
     </script>
+
 </body>
 
 </html>
