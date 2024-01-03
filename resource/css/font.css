@@ -14,6 +14,8 @@ body {
     --tc1: black;
     --tc2: rgb(86, 86, 86);
     --tc3: rgb(160, 160, 160);
+    --photo-h: 50%;
+    --photo-w: 50%;
 }
 
 .fw-900 {
