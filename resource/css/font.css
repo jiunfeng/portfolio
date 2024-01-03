@@ -63,3 +63,9 @@ body {
 .tc3 {
     color: var(--tc3);
 }
+
+.bgc {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

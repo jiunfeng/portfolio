@@ -38,6 +38,33 @@
         background: #eee;
     }
 
+    .experience {
+
+        /* 設定 再寬螢幕時 experience 每個字卡大小相同 避免跑版 */
+        @supports (display: flex) {
+            @media screen and (min-width:1600px) {
+
+                .rounded-circle {
+                    width: 800px;
+                    height: 450px;
+                }
+            }
+        }
+
+        ul {
+
+            list-style-type: none;
+        }
+
+        li {
+            display: inline-block;
+            background-color: var(--bs-info);
+            padding: 5px;
+            border-radius: 40%;
+            color: white;
+        }
+    }
+
 
 
     .active {
@@ -83,7 +110,7 @@
         position: absolute;
         content: "";
         width: 5px;
-        background: linear-gradient(to bottom, hsl(0, 100%, 90%, 1), hsl(120, 100%, 90%, 0.1));
+        background: linear-gradient(to bottom, hsl(0, 100%, 90%, 1), hsl(120, 100%, 90%, 0.2));
         height: 100%;
         right: 50%;
         transform: translateX(50%);
@@ -93,24 +120,63 @@
     .time-line-point::before {
         position: absolute;
         content: "";
-        width: 15px;
-        height: 15px;
+        width: 25px;
+        height: 25px;
         background: linear-gradient(to bottom, hsl(0, 100%, 90%), hsl(120, 100%, 90%));
         right: 50%;
         transform: translateX(50%);
+        border-radius: 50%;
+
 
     }
 
     .time-line-point:hover::before {
-        background: black;
+
+
+        box-shadow: 0px 0px 25px green;
+
     }
 
+    /* .exp-tag {} */
+
+
+
+
     .card-left {
-        margin-bottom: 50px;
+        margin-bottom: 100px;
+
+        display: flex;
+        justify-content: end;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .card-left:hover {
+        box-shadow: 5px 0px 25px green;
+    }
+
+    .card-left .card:hover {
+        box-shadow: 5px 5px 5px black;
     }
 
     .card-right {
-        margin-top: 50px;
+        margin-top: 170px;
+
+
+        display: flex;
+        justify-content: start;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .card-right:hover {
+        box-shadow: 0px 5px 25px green;
+    }
+
+
+
+    .card-right .card:hover {
+        box-shadow: 5px 5px 5px black;
     }
 
     .card-up-01 {
@@ -119,6 +185,22 @@
 
     .card-up-02 {
         transform: translateY(-80%);
+    }
+
+    .ex-bgc-01 {
+        background-image: url('/resource/img/exp01.jpg');
+    }
+
+    .ex-bgc-02 {
+        background-image: url('/resource/img/exp02.jpg');
+    }
+
+    .ex-bgc-03 {
+        background-image: url('/resource/img/exp03.jpg');
+    }
+
+    .ex-bgc-04 {
+        background-image: url('/resource/img/exp04.jpg');
     }
 
     .card-up-03 {
@@ -183,45 +265,76 @@
         </div>
         <!-- /home -->
         <!-- experience -->
-        <div class="row experience" id="experience">
+        <div class="row experience mt-5 pt-5" id="experience">
             <div class="container mt-5 time-line">
                 <div class="row">
                     <!-- experience left -->
                     <div class="col flex-column-reverse">
-                        <div class="col d-flex justify-content-end mb-5">
-                            <div class="card mb-3 card-left" style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="..." alt="...">
+                        <div class="col card-left">
+
+                            <div class="card mb-3">
+                                <div class="row g-0 shadow-lg rounded-circle">
+                                    <div class="col-md-4  ex-bgc-02 bgc">
+                                        <!-- img -->
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 d-flex align-items-center">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
+                                            <h5 class="card-title tc1">弈樂科技股份有限公司</h5>
+                                            <p class="card-text">
+                                            <p class="tc2">日常維護與監控線上營運狀況</p>
+                                            <span class="tc3">
+                                                <p>1.雲端(GCP)與k8s系統維護與監控建置。</p>
+                                                <p>2.系統錯誤根據log簡易排查回報相關單位，並後續追蹤。</p>
+                                                <p>3.線上產品監控事件記錄並根據歷史記錄提出改善建議。</p>
+                                                <p>4.負責查看監控系統緊急報警即時處理。</p>
+                                                <p>5.撰寫shell script使部門工作自動化。</p>
+                                                <p>6.使用Jira、slack、trello、notion建制SOP確保跨部門合作順暢</p>
+                                            </span>
+                                            <span>
+                                                <ul>
+                                                    <li>#Linux</li>
+                                                    <li>#Git</li>
+                                                    <li>#Shell</li>
+                                                    <li>#Kubernetes</li>
+                                                    <li>#Grafana </li>
+                                                </ul>
+                                            </span>
+                                            </p>
+                                            <p class="card-text"><small class="tc3">2021/10~2023/3
+                                                    1年6個月</small></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col d-flex justify-content-end mb-5">
-                            <div class="card mb-3 card-left" style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="..." alt="...">
+                        <div class="col card-left">
+
+                            <div class="card mb-3">
+                                <div class="row g-0 shadow-lg rounded-circle">
+                                    <div class="col-md-4  ex-bgc-03 bgc">
+                                        <!-- img -->
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 d-flex align-items-center">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
+                                            <h5 class="card-title tc1">國立中山大學</h5>
+                                            <p class="card-text">
+                                            <p class="tc2">企業管理研究所</p>
+                                            <span class="tc3">
+                                                <p>1.ASUS商業競賽製作FLASH有聲書。</p>
+                                                <p>2.那瑪夏志工改善88水災後住民生活</p>
+                                                <p>3.論文:素人影音創作關鍵成功因素之研究</p>
+
+                                            </span>
+                                            <span>
+                                                <ul>
+                                                    <li>#MBA</li>
+                                                    <li>#Game Theory</li>
+                                                    <li>#TOEIC</li>
+                                                </ul>
+                                            </span>
+                                            </p>
+                                            <p class="card-text"><small class="tc3">2010/09~2019/02</small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -232,38 +345,69 @@
                     <!-- experience right -->
                     <div class="col flex-column-reverse">
                         <div class="col card-right">
-                            <div class="card mb-3 " style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="..." alt="...">
+                            <div class="card mb-3">
+                                <div class="row g-0 shadow-lg rounded-circle">
+                                    <div class="col-md-4 ex-bgc-01 bgc">
+
+
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 d-flex align-items-center">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
+                                            <h5 class="card-title tc1">鳳之梧數位科技</h5>
+                                            <p class="card-text">
+                                            <p class="tc2">協助客戶解決線上問題</p>
+                                            <span class="tc3">
+                                                <p>1.系統發生故障時進行報修與後續追蹤。</p>
+                                                <p>2.定時紀錄監控事件並建置紀錄。</p>
+                                                <p>3.負責查看監控系統緊急報警即時處理。</p>
+                                                <p>4.建置、修改部門SOP讓部門作業流程化。</p>
+                                                <p>5.確保客戶提出的問題能夠即時被解決。</p>
+
+                                            </span>
+                                            <span>
+                                                <ul>
+                                                    <li>#Linux</li>
+                                                    <li>#系統維護操作</li>
+                                                    <li>#伺服器網站管理維護</li>
+                                                </ul>
+                                            </span>
+                                            </p>
+                                            <p class="card-text"><small class="tc3">2021/10~2023/3
+                                                    1年6個月</small></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col card-right">
-                            <div class="card mb-3 " style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="..." alt="...">
+                            <div class="card mb-3">
+                                <div class="row g-0 shadow-lg rounded-circle">
+                                    <div class="col-md-4 ex-bgc-04 bgc">
+
+
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-8 d-flex align-items-center">
                                         <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit
-                                                longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins
-                                                    ago</small></p>
+                                            <h5 class="card-title tc1">文化大學</h5>
+                                            <p class="card-text">
+                                            <p class="tc2">資訊工程學系</p>
+                                            <span class="tc3">
+                                                <!-- <p></p>
+                                                <p></p>
+                                                <p></p> -->
+
+
+                                            </span>
+                                            <span>
+                                                <ul>
+                                                    <li>#計算機概論</li>
+                                                    <li>#演算法</li>
+                                                    <li>#JAVA</li>
+                                                </ul>
+                                            </span>
+                                            </p>
+                                            <p class="card-text"><small class="tc3">2005/9~2009/6
+                                                </small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -340,12 +484,12 @@
                 const elRect = element.getBoundingClientRect()
 
 
-                if (element.classList.contains('card-left')) {
+                if (element.parentElement.classList.contains('card-left')) {
                     if (elRect.top <= window.innerHeight) {
                         element.classList.add('animate__animated', 'animate__fadeInLeft')
                         element.addEventListener("animationend", () => {
                             element.parentElement.classList.add('time-line-point')
-                            console.log('456');
+
                         });
                     } else {
                         element.classList.remove('animate__animated', 'animate__fadeInLeft')
