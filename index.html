@@ -281,6 +281,36 @@
     .card-up-03 {
         transform: translateY(-120%);
     }
+
+    /* interest 測試用 */
+    .box {
+        background-color: red;
+        height: 70vh;
+    }
+
+    .bg-img {
+        /* background-image: url('/resource/img/exp04.jpg'); */
+        background-size: cover;
+        /* 或者使用 background-size: 100% 100%; */
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.4;
+        transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+        /* 添加過渡效果，調整 0.3s 為你想要的過渡時間 */
+
+    }
+
+    .bg-img:hover {
+        opacity: 1;
+        transform: scale(1.2);
+        z-index: 10;
+        /* 陰影參數 X,Y,模糊程度,覆蓋程度 */
+        box-shadow: 0px 0px 50px 30px rgb(206, 203, 203);
+        transition: transform 1s ease, opacity 1s ease, box-shadow 1s ease;
+        /* 添加過渡效果，調整 0.3s 為你想要的過渡時間 */
+    }
+
+    /* /interest 測試用 */
 </style>
 
 <body>
@@ -308,14 +338,12 @@
                         <a class="nav-link fs-5" aria-current="page" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#skill">Skill</a>
+                        <a class="nav-link" aria-current="page" href="#about">About</a>
                     </li>
                     <li class="nav-item fs-5">
                         <a class="nav-link" aria-current="page" href="#interest">Interest</a>
                     </li>
-                    <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#about">About</a>
-                    </li>
+
 
 
 
@@ -522,11 +550,54 @@
         <div class="row projects" id="projects">
             <h1>Project</h1>
         </div>
-        <div class="row skill" id="skill">
-            <h1>Skill</h1>
-        </div>
-        <div class="row interest" id="interest">Interest</div>
+        <!-- about -->
         <div class="row about" id="about">about</div>
+        <!-- /about -->
+        <!-- interest -->
+
+        <div class="row m-5 interest" id="interest" style="height: 80vh;">
+            <div class="row m-1 p-0 animate__animated " style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
+                <div class="col-8 ">
+                    <div class="row flex-column h-100">
+                        <div class="col p-0">
+                            <div class="row w-100 h-100 m-0">
+                                <div class="col bg-img"
+                                    style="background-image: url('/resource/img/interest/interest01.jpg');"></div>
+                                <div class="col bg-img"
+                                    style="background-image: url('/resource/img/interest/interest02.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="col p-0">
+                            <div class="row w-100 h-100 m-0">
+                                <div class="col-4 bg-img"
+                                    style="background-image: url('/resource/img/interest/interest04.jpg');"></div>
+                                <div class="col-8 bg-img"
+                                    style="background-image: url('/resource/img/interest/interest05.jpg');"></div>
+                            </div>
+                        </div>
+                        <div class="col p-0">
+                            <div class="row w-100 h-100 m-0">
+                                <div class="col bg-img"
+                                    style="background-image: url('/resource/img/interest/interest07.jpg');"></div>
+                                <div class="col bg-img"
+                                    style="background-image: url('/resource/img/interest/interest08.jpg');"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 p-0"">
+                    <div class=" row w-100 h-100 flex-column m-0">
+                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest03.jpg');">
+                    </div>
+                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest09.jpg');">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /interest -->
+
     </div>
 
     <!-- bootstrap5 -->
