@@ -556,8 +556,8 @@
         <!-- interest -->
 
         <div class="row m-5 interest" id="interest" style="height: 80vh;">
-            <div class="row m-1 p-0 animate__animated " style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
-                <div class="col-8 ">
+            <div class="row m-1 p-0" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
+                <div class="col-8">
                     <div class="row flex-column h-100">
                         <div class="col p-0">
                             <div class="row w-100 h-100 m-0">
@@ -585,18 +585,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 p-0"">
+                <div class="col-4 p-0">
                     <div class=" row w-100 h-100 flex-column m-0">
-                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest03.jpg');">
-                    </div>
-                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest09.jpg');">
+                        <div class="col bg-img p-0"
+                            style="background-image: url('/resource/img/interest/interest03.jpg');">
+                        </div>
+                        <div class="col bg-img p-0"
+                            style="background-image: url('/resource/img/interest/interest09.jpg');">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
-    <!-- /interest -->
+        </div>
+        <!-- /interest -->
 
     </div>
 
@@ -680,6 +682,19 @@
         })
 
 
+    </script>
+    <!-- interest fadeIn -->
+    <script>
+        const interestElement = document.querySelector('#interest')
+        window.addEventListener('scroll', () => {
+            const interestRect = interestElement.getBoundingClientRect()
+            if (interestRect.top <= window.innerHeight) {
+                interestElement.classList.add('animate__animated', 'animate__fadeIn', 'animate__slow')
+            }
+        })
+        interestElement.addEventListener('animationend', () => {
+            interestElement.classList.remove('animate__animated', 'animate__fadeIn', 'animate__slow')
+        })
     </script>
 
 </body>
