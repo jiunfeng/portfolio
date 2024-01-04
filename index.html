@@ -28,11 +28,39 @@
         
     } */
     .container-fluid .home {
+        position: relative;
         min-height: calc(100vh - 68px);
         /* min-height: 100vh; */
         padding-top: 68px;
     }
 
+    .arrow01 {
+        position: absolute;
+        bottom: 95px;
+        left: 48.5%;
+        z-index: 10;
+        text-decoration: none;
+
+        color: black;
+    }
+
+    .arrow01:visited {
+        color: black;
+    }
+
+    .arrow02 {
+        position: absolute;
+        bottom: 80px;
+        left: 48.5%;
+        z-index: 10;
+        text-decoration: none;
+
+        color: black;
+    }
+
+    .arrow02:visited {
+        color: black;
+    }
 
     .home {
         background: #eee;
@@ -51,6 +79,7 @@
         background-color: var(--tc3);
 
 
+
     }
 
     .home-photo-s2 {
@@ -60,7 +89,6 @@
         height: calc(var(--photo-h) * 1.3);
         border-radius: 50%;
         background-color: var(--tc2);
-
 
 
     }
@@ -80,7 +108,7 @@
         width: var(--photo-w);
         height: var(--photo-h);
         border-radius: 50%;
-        background-color: aqua;
+        background-image: url(/resource/img/home_head.jpg);
 
 
     }
@@ -300,19 +328,36 @@
     <div class="container-fluid">
         <!-- home -->
         <div class="row home p-0" id="topbar">
+
+            <a class="fa-solid fa-chevron-down fa-2xl arrow01 animate__animated animate__flash animate__infinite animate__slow"
+                href="#experience"></a>
+            <a class="fa-solid fa-chevron-down fa-2xl arrow02 animate__animated animate__flash animate__infinite animate__slower"
+                href="#experience"></a>
+
             <div class="col p-5 d-flex flex-column justify-content-center">
-                <h4 class="ms-3 ps-3" style="font-size: 3.4rem;">
-                    <span class="bg-success">Hello!I am</span>
+                <h4 class="ms-3 ps-3 animate__animated animate__fadeInTopLeft"
+                    style="font-size: 3.4rem;padding-left: 10.5rem !important;">
+                    <span class="bg-success p-5 pt-0">Hello!I am</span>
                     <span class="fst-italic fw-200 ps-2">曾濬楓</span>
                 </h4>
-                <h1 class="fw-900 ms-4 ps-4" style="font-size: 5.2rem;">MARCUS TZENG</h3>
-                    <h5 class="tc3 ms-5 ps-5" style="font-size: 2.8rem;">DevOps Developer</h5>
+                <h1 class="fw-900 ms-4 ps-4 animate__animated  animate__flipInX animate__delay-1s"
+                    style="font-size: 5.2rem;padding-left: 11.5rem !important;">MARCUS TZENG
+                    </h3>
+                    <h5 class="tc3 ms-5 ps-5 animate__animated animate__fadeInBottomRight"
+                        style="font-size: 2.8rem;padding-left: 14.5rem !important;">
+                        DevOps Developer</h5>
                     <!-- <br><br><br><br><br><br><br><br> -->
             </div>
-            <div class="col p-5 d-flex flex-column justify-content-center align-items-center home-photo">
+            <!-- home-photo -->
+            <div
+                class="col d-flex flex-column justify-content-center align-items-center home-photo animate__animated animate__zoomInRight">
                 <span class="home-photo-s1"></span>
-                <div class="home-photo-s2"></div><span class="home-photo-s3"></span><span class="home-photo-s4"></span>
+                <div class="home-photo-s2"></div>
+                <span class="home-photo-s3"></span>
+                <span class="home-photo-s4 bgc"></span>
             </div>
+            <!-- /home-photo -->
+
         </div>
         <!-- /home -->
         <!-- experience -->
