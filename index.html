@@ -14,6 +14,8 @@
     <!-- google font & body -->
     <link rel="stylesheet" href="/resource/css/font.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <!-- project card -->
+    <link rel="stylesheet" href="/resource/css/projectcard.css">
 </head>
 <style>
     /* :root{
@@ -39,8 +41,9 @@
         bottom: 95px;
         left: 48.5%;
         z-index: 10;
+        width: 50px;
         text-decoration: none;
-
+        display: none;
         color: black;
     }
 
@@ -53,8 +56,9 @@
         bottom: 80px;
         left: 48.5%;
         z-index: 10;
+        width: 50px;
         text-decoration: none;
-
+        display: none;
         color: black;
     }
 
@@ -282,10 +286,36 @@
         transform: translateY(-120%);
     }
 
-    /* interest 測試用 */
-    .box {
-        background-color: red;
-        height: 70vh;
+    /* .ProjectCard_card__Ilp8p {
+        background: red;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        cursor: pointer;
+    } */
+    .project-card-link {
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .project-card-link::before {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #3498db;
+        transition: height 5s ease;
+    }
+
+    .project-card-link:hover::before {
+
+        background: linear-gradient(to right, #3498db 50%, transparent 100%);
+        background-size: 100% 100%;
+        height: 100%;
+        /* transition: background 5s; */
     }
 
     .bg-img {
@@ -309,8 +339,6 @@
         transition: transform 1s ease, opacity 1s ease, box-shadow 1s ease;
         /* 添加過渡效果，調整 0.3s 為你想要的過渡時間 */
     }
-
-    /* /interest 測試用 */
 </style>
 
 <body>
@@ -357,9 +385,9 @@
         <!-- home -->
         <div class="row home p-0" id="topbar">
 
-            <a class="fa-solid fa-chevron-down fa-2xl arrow01 animate__animated animate__flash animate__infinite animate__slow"
+            <a class="fa-solid fa-chevron-down fa-2xl arrow arrow01 animate__animated animate__flash animate__infinite animate__slower"
                 href="#experience"></a>
-            <a class="fa-solid fa-chevron-down fa-2xl arrow02 animate__animated animate__flash animate__infinite animate__slower"
+            <a class="fa-solid fa-chevron-down fa-2xl arrow arrow02 animate__animated animate__flash animate__infinite animate__slower"
                 href="#experience"></a>
 
             <div class="col p-5 d-flex flex-column justify-content-center">
@@ -547,8 +575,35 @@
             </div>
         </div>
         <!-- /experience -->
-        <div class="row projects" id="projects">
-            <h1>Project</h1>
+        <div class="row projects p-5 d-flex justify-content-center" id="projects">
+            <div class="col-3 project-card">
+                <img src="/resource/img/project/kbGs6zH.webp" alt="" style="z-index: 5;">
+                <div class="p-3 rounded-bottom-5"
+                    style="background-color: white; width: 100%;transform: translateY(-10px);">
+                    <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                    <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                    <div class="p-2">
+                        <a class="p-2 project-card-link" href="#">Source Code</a>
+                        <a class="p-2 project-card-link" href="#">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 project-card">
+                <p>123</p>
+                <p>456</p>
+            </div>
+            <div class="col-3 project-card">
+                <p>123</p>
+            </div>
+            <div class="col-3 project-card">
+                <p>123</p>
+            </div>
+            <div class="col-3 project-card">
+                <p>123</p>
+
+            </div>
+
+
         </div>
         <!-- about -->
         <div class="row about" id="about">about</div>
@@ -556,7 +611,7 @@
         <!-- interest -->
 
         <div class="row m-5 interest" id="interest" style="height: 80vh;">
-            <div class="row m-1 p-0" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
+            <div class="row m-1 p-0" id="interest-img" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
                 <div class="col-8">
                     <div class="row flex-column h-100">
                         <div class="col p-0">
@@ -645,6 +700,18 @@
             })
         });
     </script>
+    <!-- arrow display -->
+    <script>
+        const arrowElement = document.querySelectorAll('.arrow')
+        window.onload = () => {
+            arrowElement.forEach((element) => {
+                setTimeout(() => {
+                    element.style.display = 'inline-block';
+                }, 2500);
+            })
+        }
+    </script>
+
     <!-- card animate -->
     <script>
         const cardElement = document.querySelectorAll('.card')
@@ -685,15 +752,27 @@
     </script>
     <!-- interest fadeIn -->
     <script>
-        const interestElement = document.querySelector('#interest')
+        const interestElement = document.querySelector('#interest-img')
         window.addEventListener('scroll', () => {
             const interestRect = interestElement.getBoundingClientRect()
-            if (interestRect.top <= window.innerHeight) {
+
+            if (interestRect.top <= window.innerHeight || interestRect.bottom <= 0) {
+                interestElement.style.display = 'flex';
                 interestElement.classList.add('animate__animated', 'animate__fadeIn', 'animate__slow')
+            } else {
+                // 限制圖片離開可視範圍後就移除
+                interestElement.style.display = 'none';
+                interestElement.classList.remove('animate__animated', 'animate__fadeIn', 'animate__slow')
             }
         })
-        interestElement.addEventListener('animationend', () => {
-            interestElement.classList.remove('animate__animated', 'animate__fadeIn', 'animate__slow')
+
+    </script>
+
+    <!-- project card  -->
+    <script>
+        const pcardElementList = document.querySelectorAll('.project-card')
+        pcardElementList.forEach(element => {
+            element.classList.add('m-5')
         })
     </script>
 
