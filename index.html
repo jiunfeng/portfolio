@@ -16,6 +16,9 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <!-- project card -->
     <link rel="stylesheet" href="/resource/css/projectcard.css">
+    <!-- wow css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 </head>
 <style>
     /* :root{
@@ -299,6 +302,32 @@
         display: inline-block;
     }
 
+    .project-card:hover {
+
+        /* opacity: 1; */
+        transform: scale(1.2);
+        /* z-index: 10; */
+        /* 陰影參數 X,Y,模糊程度,覆蓋程度 */
+        box-shadow: 0px 0px 50px 30px rgb(206, 203, 203);
+        transition: transform 0.5s ease, box-shadow 1s ease;
+    }
+
+    .project-card a {
+        text-decoration: none;
+    }
+
+    .project-card-content {
+        background-color: white;
+        width: 100%;
+        transform: translateY(-50px);
+        z-index: 0;
+        transition: transform 5s ease;
+    }
+
+    .project-card-link:hover {
+        color: rgb(196, 134, 53);
+    }
+
     .project-card-link::before {
         content: '';
         position: absolute;
@@ -306,15 +335,21 @@
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #3498db;
-        transition: height 5s ease;
+        background-color: #3498db77;
+        /* background-color: rgba(128, 128, 128, 0.144); */
+        /* 高度hover渲染時間 */
+        transition: height 0.5s ease;
+        /* 水平置中 */
+        left: 50%;
+        transform: translateX(-50%);
+
     }
 
     .project-card-link:hover::before {
 
-        background: linear-gradient(to right, #3498db 50%, transparent 100%);
+
         background-size: 100% 100%;
-        height: 100%;
+        height: 70%;
         /* transition: background 5s; */
     }
 
@@ -576,90 +611,115 @@
         </div>
         <!-- /experience -->
         <div class="row projects p-5 d-flex justify-content-center" id="projects">
-            <div class="col-3 project-card">
-                <img src="/resource/img/project/kbGs6zH.webp" alt="" style="z-index: 5;">
-                <div class="p-3 rounded-bottom-5"
-                    style="background-color: white; width: 100%;transform: translateY(-10px);">
-                    <h5 class="card-title tc1 p-2">KSB報名網</h5>
-                    <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
-                    <div class="p-2">
-                        <a class="p-2 project-card-link" href="#">Source Code</a>
-                        <a class="p-2 project-card-link" href="#">Live Demo</a>
+            <!-- project-card-01 -->
+            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;">
+                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                        style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s">
+                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">Source Code</a>
+                            <a class="p-2 project-card-link" href="123">Live Demo</a>
+                        </div>
+                    </div>
+                </a>
+                <!-- Modal -->
+                <div class="modal fade" id="project-card01-Modal" tabindex="-1"
+                    aria-labelledby="project-card01-ModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header d-flex justify-content-center">
+                                <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                                </h5>
+                                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body container">
+                                <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-3 project-card">
-                <p>123</p>
-                <p>456</p>
-            </div>
-            <div class="col-3 project-card">
-                <p>123</p>
-            </div>
-            <div class="col-3 project-card">
-                <p>123</p>
-            </div>
-            <div class="col-3 project-card">
-                <p>123</p>
+            <!-- /project-card-01 -->
 
-            </div>
+
 
 
         </div>
         <!-- about -->
-        <div class="row about" id="about">about</div>
-        <!-- /about -->
-        <!-- interest -->
+        <div class="row about" id="about">about
 
-        <div class="row m-5 interest" id="interest" style="height: 80vh;">
-            <div class="row m-1 p-0" id="interest-img" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
-                <div class="col-8">
-                    <div class="row flex-column h-100">
-                        <div class="col p-0">
-                            <div class="row w-100 h-100 m-0">
-                                <div class="col bg-img"
-                                    style="background-image: url('/resource/img/interest/interest01.jpg');"></div>
-                                <div class="col bg-img"
-                                    style="background-image: url('/resource/img/interest/interest02.jpg');"></div>
-                            </div>
-                        </div>
-                        <div class="col p-0">
-                            <div class="row w-100 h-100 m-0">
-                                <div class="col-4 bg-img"
-                                    style="background-image: url('/resource/img/interest/interest04.jpg');"></div>
-                                <div class="col-8 bg-img"
-                                    style="background-image: url('/resource/img/interest/interest05.jpg');"></div>
-                            </div>
-                        </div>
-                        <div class="col p-0">
-                            <div class="row w-100 h-100 m-0">
-                                <div class="col bg-img"
-                                    style="background-image: url('/resource/img/interest/interest07.jpg');"></div>
-                                <div class="col bg-img"
-                                    style="background-image: url('/resource/img/interest/interest08.jpg');"></div>
-                            </div>
+            <!-- Button trigger modal -->
+            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </a>
+
+
+        </div>
+    </div>
+    <!-- /about -->
+    <!-- interest -->
+
+    <div class="row m-5 interest" id="interest" style="height: 80vh;">
+        <div class="row m-1 p-0" id="interest-img" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
+            <div class="col-8">
+                <div class="row flex-column h-100">
+                    <div class="col p-0">
+                        <div class="row w-100 h-100 m-0">
+                            <div class="col bg-img"
+                                style="background-image: url('/resource/img/interest/interest01.jpg');"></div>
+                            <div class="col bg-img"
+                                style="background-image: url('/resource/img/interest/interest02.jpg');"></div>
                         </div>
                     </div>
-                </div>
-                <div class="col-4 p-0">
-                    <div class=" row w-100 h-100 flex-column m-0">
-                        <div class="col bg-img p-0"
-                            style="background-image: url('/resource/img/interest/interest03.jpg');">
+                    <div class="col p-0">
+                        <div class="row w-100 h-100 m-0">
+                            <div class="col-4 bg-img"
+                                style="background-image: url('/resource/img/interest/interest04.jpg');"></div>
+                            <div class="col-8 bg-img"
+                                style="background-image: url('/resource/img/interest/interest05.jpg');"></div>
                         </div>
-                        <div class="col bg-img p-0"
-                            style="background-image: url('/resource/img/interest/interest09.jpg');">
+                    </div>
+                    <div class="col p-0">
+                        <div class="row w-100 h-100 m-0">
+                            <div class="col bg-img"
+                                style="background-image: url('/resource/img/interest/interest07.jpg');"></div>
+                            <div class="col bg-img"
+                                style="background-image: url('/resource/img/interest/interest08.jpg');"></div>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <div class="col-4 p-0">
+                <div class=" row w-100 h-100 flex-column m-0">
+                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest03.jpg');">
+                    </div>
+                    <div class="col bg-img p-0" style="background-image: url('/resource/img/interest/interest09.jpg');">
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- /interest -->
+
+    </div>
+    <!-- /interest -->
 
     </div>
 
     <!-- bootstrap5 -->
     <script src="/resource/js/bootstrap.bundle.js"></script>
-
+    <!-- wow js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">
+    </script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- navbar scroll -->
     <script>
         // 監聽navbar當視窗開始滾動後加上class及style
@@ -772,7 +832,7 @@
     <script>
         const pcardElementList = document.querySelectorAll('.project-card')
         pcardElementList.forEach(element => {
-            element.classList.add('m-5')
+            element.classList.add('m-2', 'ms-3', 'me-3')
         })
     </script>
 
