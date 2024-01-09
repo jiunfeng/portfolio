@@ -289,13 +289,7 @@
         transform: translateY(-120%);
     }
 
-    /* .ProjectCard_card__Ilp8p {
-        background: red;
-        display: flex;
-        flex-direction: column;
-        border-radius: 20px;
-        cursor: pointer;
-    } */
+
     .project-card-link {
         position: relative;
         text-decoration: none;
@@ -319,9 +313,41 @@
     .project-card-content {
         background-color: white;
         width: 100%;
-        transform: translateY(-50px);
+        /* transform: translateY(-50px); */
         z-index: 0;
-        transition: transform 5s ease;
+        opacity: 0;
+        border-top-right-radius: 7rem;
+        border-top-left-radius: 7rem;
+        /* border-top-right-radius: var(--bs-border-radius-xxl);
+        border-top-left-radius: var(--bs-border-radius-xxl); */
+
+        /* transition: transform 5s ease; */
+    }
+
+    @keyframes project-card-content-ani {
+        from {
+            transform: translateY(30px);
+            /* opacity: 0; */
+
+        }
+
+        to {
+            transform: translateY(-10px);
+            opacity: 1;
+
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+
+        }
+    }
+
+
+
+    .project-card-content-ani {
+        animation: project-card-content-ani 3s forwards;
+        animation-delay: 1s;
+        /* animation-fill-mode: none; */
+        /* animation: project-card-content-anii 5s forwards; */
     }
 
     .project-card-link:hover {
@@ -373,6 +399,27 @@
         box-shadow: 0px 0px 50px 30px rgb(206, 203, 203);
         transition: transform 1s ease, opacity 1s ease, box-shadow 1s ease;
         /* 添加過渡效果，調整 0.3s 為你想要的過渡時間 */
+    }
+
+    @keyframes slideInDown {
+
+
+        from {
+            transform: translate3d(0, -100%, 0);
+            border-bottom-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-top-left-radius: 100%;
+            /* visibility: visible; */
+        }
+
+        to {
+            transform: translate3d(0, 0, 0);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
     }
 </style>
 
@@ -610,7 +657,9 @@
             </div>
         </div>
         <!-- /experience -->
+
         <div class="row projects p-5 d-flex justify-content-center" id="projects">
+            <div class="row">123</div>
             <!-- project-card-01 -->
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
@@ -618,7 +667,8 @@
                         style="z-index: auto;width: 100%;height: 100%;">
                     <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
                         style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
-                    <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s">
+                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
                         <h5 class="card-title tc1 p-2">KSB報名網</h5>
                         <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
                         <div class="p-2">
@@ -628,27 +678,188 @@
                     </div>
                 </a>
                 <!-- Modal -->
-                <div class="modal fade" id="project-card01-Modal" tabindex="-1"
-                    aria-labelledby="project-card01-ModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header d-flex justify-content-center">
-                                <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
-                                </h5>
-                                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body container">
-                                <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
 
-                            </div>
+
+            </div>
+            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
 
                         </div>
+
                     </div>
                 </div>
             </div>
             <!-- /project-card-01 -->
+            <!-- project-card-01 -->
+            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;">
+                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                        style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
+                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">Source Code</a>
+                            <a class="p-2 project-card-link" href="123">Live Demo</a>
+                        </div>
+                    </div>
+                </a>
+                <!-- Modal -->
 
+
+            </div>
+            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /project-card-01 -->
+            <!-- project-card-01 -->
+            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;">
+                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                                    style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
+                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">Source Code</a>
+                            <a class="p-2 project-card-link" href="123">Live Demo</a>
+                        </div>
+                    </div>
+                </a>
+                <!-- Modal -->
+
+
+            </div>
+            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /project-card-01 -->
+            <!-- project-card-01 -->
+            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;">
+                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                        style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
+                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">Source Code</a>
+                            <a class="p-2 project-card-link" href="123">Live Demo</a>
+                        </div>
+                    </div>
+                </a>
+                <!-- Modal -->
+
+
+            </div>
+            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /project-card-01 -->
+            <!-- project-card-01 -->
+            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;">
+                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                                    style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
+                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
+                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">Source Code</a>
+                            <a class="p-2 project-card-link" href="123">Live Demo</a>
+                        </div>
+                    </div>
+                </a>
+                <!-- Modal -->
+
+
+            </div>
+            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /project-card-01 -->
 
 
 
