@@ -34,7 +34,7 @@
     } */
     .container-fluid .home {
         position: relative;
-        min-height: calc(100vh - 68px);
+        min-height: calc(100vh - 58px);
         /* min-height: 100vh; */
         padding-top: 68px;
     }
@@ -120,6 +120,46 @@
 
     }
 
+    .sub-title {
+        /* margin-top: 80px; */
+        margin-bottom: 50px;
+        padding-top: 85px;
+        font-family: 'Lemon', serif;
+    }
+
+    .sub-title-text {
+        position: relative
+    }
+
+    .sub-title-text::before {
+        position: absolute;
+        content: "";
+
+        background: linear-gradient(to bottom, hsl(0, 0%, 1%), hsl(120, 100%, 90%, 0.1));
+        height: 7px;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -5px;
+        animation: lrwidth 1s ease forwards;
+
+    }
+
+
+
+    @keyframes lrwidth {
+        from {
+
+            width: 0;
+        }
+
+        to {
+
+            width: 5%;
+        }
+    }
+
+
+
     .experience {
 
         /* 設定 再寬螢幕時 experience 每個字卡大小相同 避免跑版 */
@@ -178,6 +218,7 @@
 
     .nav-link {
         margin-left: 50px;
+        font-family: 'Lemon', serif;
     }
 
     .nav-link:hover {
@@ -296,14 +337,15 @@
         display: inline-block;
     }
 
-    .project-card:hover {
+    .project-card.active:hover {
 
         /* opacity: 1; */
         transform: scale(1.2);
-        /* z-index: 10; */
+        z-index: 10;
         /* 陰影參數 X,Y,模糊程度,覆蓋程度 */
         box-shadow: 0px 0px 50px 30px rgb(206, 203, 203);
         transition: transform 0.5s ease, box-shadow 1s ease;
+
     }
 
     .project-card a {
@@ -421,6 +463,11 @@
             border-top-left-radius: 0;
         }
     }
+
+    .footer {
+        background-color: black;
+        color: white;
+    }
 </style>
 
 <body>
@@ -436,22 +483,22 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link fs-5 active click" aria-current="page" href="#">Home</a>
+                        <a class="nav-link fs-5 active click" aria-current="page" href="#">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" aria-current="page" href="#experience">Experience</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#experience-title">EXPERIENCE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" aria-current="page" href="#projects">Projects</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#projects-title">PROJECTS</a>
                     </li>
                     <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#about">About</a>
+                        <a class="nav-link" aria-current="page" href="#about-title">ABOUT</a>
                     </li>
                     <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#interest">Interest</a>
+                        <a class="nav-link" aria-current="page" href="#interest-title">INSTEREST</a>
                     </li>
 
 
@@ -468,9 +515,9 @@
         <div class="row home p-0" id="topbar">
 
             <a class="fa-solid fa-chevron-down fa-2xl arrow arrow01 animate__animated animate__flash animate__infinite animate__slower"
-                href="#experience"></a>
+                href="#experience-title"></a>
             <a class="fa-solid fa-chevron-down fa-2xl arrow arrow02 animate__animated animate__flash animate__infinite animate__slower"
-                href="#experience"></a>
+                href="#experience-title"></a>
 
             <div class="col p-5 d-flex flex-column justify-content-center">
                 <h4 class="ms-3 ps-3 animate__animated animate__fadeInTopLeft"
@@ -479,7 +526,7 @@
                     <span class="fst-italic fw-200 ps-2">曾濬楓</span>
                 </h4>
                 <h1 class="fw-900 ms-4 ps-4 animate__animated  animate__flipInX animate__delay-1s"
-                    style="font-size: 5.2rem;padding-left: 11.5rem !important;">MARCUS TZENG
+                    style="font-size: 5.2rem;padding-left: 10rem !important;font-family: 'Lemon', serif;">MARCUS TZENG
                     </h3>
                     <h5 class="tc3 ms-5 ps-5 animate__animated animate__fadeInBottomRight"
                         style="font-size: 2.8rem;padding-left: 14.5rem !important;">
@@ -499,8 +546,11 @@
         </div>
         <!-- /home -->
         <!-- experience -->
-        <div class="row experience mt-5 pt-5" id="experience">
-            <div class="container mt-5 time-line">
+        <div class="row sub-title justify-content-center wow flip" id="experience-title">
+            <h1 class="col text-center fw-400">EXPERIENCE</h1>
+        </div>
+        <div class="row experience " id="experience">
+            <div class="container time-line">
                 <div class="row">
                     <!-- experience left -->
                     <div class="col flex-column-reverse">
@@ -658,12 +708,15 @@
         </div>
         <!-- /experience -->
 
-        <div class="row projects p-5 d-flex justify-content-center" id="projects">
-            <div class="row">123</div>
-            <!-- project-card-01 -->
+        <!-- project-card-01 -->
+        <div class="row sub-title justify-content-center wow flip mb-2" id="projects-title">
+            <h1 class="col text-center fw-400">PROJECTS</h1>
+        </div>
+        <div class="row projects d-flex justify-content-center" id="projects">
+
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
-                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/01.webp" alt=""
                         style="z-index: auto;width: 100%;height: 100%;">
                     <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
                         style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
@@ -703,7 +756,7 @@
             <!-- project-card-01 -->
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
-                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/02.webp" alt=""
                         style="z-index: auto;width: 100%;height: 100%;">
                     <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
                         style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
@@ -743,7 +796,7 @@
             <!-- project-card-01 -->
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
-                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/03.webp" alt=""
                         style="z-index: auto;width: 100%;height: 100%;">
                     <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
                                     style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
@@ -783,50 +836,10 @@
             <!-- project-card-01 -->
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
-                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/04.webp" alt=""
                         style="z-index: auto;width: 100%;height: 100%;">
                     <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
                         style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
-                    <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
-                    <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
-                        <h5 class="card-title tc1 p-2">KSB報名網</h5>
-                        <p class="tc2 p-2">可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動可讓使用者報名參加活動</p>
-                        <div class="p-2">
-                            <a class="p-2 project-card-link" href="#">Source Code</a>
-                            <a class="p-2 project-card-link" href="123">Live Demo</a>
-                        </div>
-                    </div>
-                </a>
-                <!-- Modal -->
-
-
-            </div>
-            <div class="modal fade" id="project-card01-Modal" tabindex="-1" aria-labelledby="project-card01-ModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header d-flex justify-content-center">
-                            <h5 class="modal-title ms-auto" id="project-card01-ModalLabel">Modal title
-                            </h5>
-                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body container">
-                            <div class="row"><img src="/resource/img/interest/interest01.jpg" alt=""></div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- /project-card-01 -->
-            <!-- project-card-01 -->
-            <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
-                <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
-                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/kbGs6zH.webp" alt=""
-                        style="z-index: auto;width: 100%;height: 100%;">
-                    <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
-                                    style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
                     <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
                     <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
                         <h5 class="card-title tc1 p-2">KSB報名網</h5>
@@ -865,7 +878,10 @@
 
         </div>
         <!-- about -->
-        <div class="row about" id="about">about
+        <div class="row sub-title justify-content-center wow flip mb-2" id="about-title">
+            <h1 class="col text-center fw-400">ABOUT</h1>
+        </div>
+        <div class="row about" id="about">
 
             <!-- Button trigger modal -->
             <a data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -877,8 +893,10 @@
     </div>
     <!-- /about -->
     <!-- interest -->
-
-    <div class="row m-5 interest" id="interest" style="height: 80vh;">
+    <div class="row sub-title justify-content-center wow flip mb-2" id="interest-title">
+        <h1 class="col text-center fw-400">INTEREST</h1>
+    </div>
+    <div class="row interest m-5 mt-0" id="interest" style="height: 80vh;">
         <div class="row m-1 p-0" id="interest-img" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
             <div class="col-8">
                 <div class="row flex-column h-100">
@@ -920,7 +938,13 @@
 
     </div>
     <!-- /interest -->
-
+    <!-- footer -->
+    <div class="row align-items-center">
+        <div class="col footer d-flex align-items-center justify-content-center">
+            <h5 class="my-1">MARCUS TZENG © 2024</h5>
+        </div>
+    </div>
+    <!-- /footer -->
     </div>
 
     <!-- bootstrap5 -->
@@ -1029,11 +1053,11 @@
 
             if (interestRect.top <= window.innerHeight || interestRect.bottom <= 0) {
                 interestElement.style.display = 'flex';
-                interestElement.classList.add('animate__animated', 'animate__fadeIn', 'animate__slow')
+                interestElement.classList.add('animate__animated', 'animate__fadeIn', 'animate__slower')
             } else {
                 // 限制圖片離開可視範圍後就移除
                 interestElement.style.display = 'none';
-                interestElement.classList.remove('animate__animated', 'animate__fadeIn', 'animate__slow')
+                interestElement.classList.remove('animate__animated', 'animate__fadeIn', 'animate__slower')
             }
         })
 
@@ -1043,8 +1067,35 @@
     <script>
         const pcardElementList = document.querySelectorAll('.project-card')
         pcardElementList.forEach(element => {
-            element.classList.add('m-2', 'ms-3', 'me-3')
+            element.classList.add('m-3', 'ms-4', 'me-4')
+
         })
+        pcardElementList.forEach(element => {
+            element.addEventListener('animationend', () => {
+                setTimeout(() => {
+                    element.classList.add('active');
+                }, 2500);
+
+            });
+        });
+
+    </script>
+
+    <!-- sub-title animated 下畫線動畫 -->
+    <script>
+
+        const subTitleElements = document.querySelectorAll('.sub-title');
+
+
+        subTitleElements.forEach(subTitleElement => {
+            subTitleElement.addEventListener('animationstart', () => {
+
+                setTimeout(() => {
+                    const h1Element = subTitleElement.querySelector('h1');
+                    h1Element.classList.add('sub-title-text');
+                }, 500); // 1000毫秒 = 1秒
+            });
+        });
     </script>
 
 </body>
