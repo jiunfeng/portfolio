@@ -32,6 +32,7 @@
     /* .bg-light {
         
     } */
+
     .container-fluid .home {
         position: relative;
         min-height: calc(100vh - 58px);
@@ -260,6 +261,14 @@
 
     }
 
+    @media (max-width: 992px) {
+
+        .time-line::before,
+        .time-line-point::before {
+            display: none;
+        }
+    }
+
     /* .exp-tag {} */
 
 
@@ -421,6 +430,36 @@
         /* transition: background 5s; */
     }
 
+    .about {
+        position: relative
+    }
+
+    .about::before {
+        position: absolute;
+        content: "";
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black 50%),
+            linear-gradient(to top, black 50%, rgba(0, 0, 0, 0));
+        width: 7px;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+
+        animation: aboutline 1s ease forwards;
+
+    }
+
+    @keyframes aboutline {
+        from {
+
+            height: 0;
+        }
+
+        to {
+
+            height: 80%;
+        }
+    }
+
     .bg-img {
         /* background-image: url('/resource/img/exp04.jpg'); */
         background-size: cover;
@@ -486,19 +525,21 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link fs-5 active click" aria-current="page" href="#">HOME</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#" id="home-nav">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" aria-current="page" href="#experience-title">EXPERIENCE</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#experience-title"
+                            id="experience-nav">EXPERIENCE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" aria-current="page" href="#projects-title">PROJECTS</a>
+                        <a class="nav-link fs-5" aria-current="page" href="#projects-title"
+                            id="projects-nav">PROJECTS</a>
                     </li>
                     <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#about-title">ABOUT</a>
+                        <a class="nav-link" aria-current="page" href="#about-title" id="about-nav">ABOUT</a>
                     </li>
                     <li class="nav-item fs-5">
-                        <a class="nav-link" aria-current="page" href="#interest-title">INSTEREST</a>
+                        <a class="nav-link" aria-current="page" href="#interest-title" id="interest-nav">INSTEREST</a>
                     </li>
 
 
@@ -519,7 +560,7 @@
             <a class="fa-solid fa-chevron-down fa-2xl arrow arrow02 animate__animated animate__flash animate__infinite animate__slower"
                 href="#experience-title"></a>
 
-            <div class="col p-5 d-flex flex-column justify-content-center">
+            <div class="col p-5 d-flex flex-column justify-content-center sub-body" id="home">
                 <h4 class="ms-3 ps-3 animate__animated animate__fadeInTopLeft"
                     style="font-size: 3.4rem;padding-left: 10.5rem !important;">
                     <span class="bg-success p-5 pt-0">Hello!I am</span>
@@ -549,9 +590,9 @@
         <div class="row sub-title justify-content-center wow flip" id="experience-title">
             <h1 class="col text-center fw-400">EXPERIENCE</h1>
         </div>
-        <div class="row experience " id="experience">
+        <div class="row experience sub-body" id="experience">
             <div class="container time-line">
-                <div class="row">
+                <div class="row ">
                     <!-- experience left -->
                     <div class="col flex-column-reverse">
                         <div class="col card-left">
@@ -712,7 +753,7 @@
         <div class="row sub-title justify-content-center wow flip mb-2" id="projects-title">
             <h1 class="col text-center fw-400">PROJECTS</h1>
         </div>
-        <div class="row projects d-flex justify-content-center" id="projects">
+        <div class="row projects d-flex justify-content-center sub-body" id="projects">
 
             <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
                 <a data-bs-toggle="modal" data-bs-target="#project-card01-Modal">
@@ -878,15 +919,16 @@
 
         </div>
         <!-- about -->
-        <div class="row sub-title justify-content-center wow flip mb-2" id="about-title">
+        <div class="row sub-title justify-content-center mb-2" id="about-title">
             <h1 class="col text-center fw-400">ABOUT</h1>
         </div>
-        <div class="row about" id="about">
+        <div class="wow row about d-flex justify-content-center sub-body zoomIn" id="about" style="height: 80vh;">
 
-            <!-- Button trigger modal -->
-            <a data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </a>
+            <div class="col wow slideInDown" style="background-color: chocolate;">
+            </div>
+            <div class="col">
+
+            </div>
 
 
         </div>
@@ -896,7 +938,7 @@
     <div class="row sub-title justify-content-center wow flip mb-2" id="interest-title">
         <h1 class="col text-center fw-400">INTEREST</h1>
     </div>
-    <div class="row interest m-5 mt-0" id="interest" style="height: 80vh;">
+    <div class="row interest m-5 mt-0 sub-body" id="interest" style="height: 80vh;">
         <div class="row m-1 p-0" id="interest-img" style="box-shadow:10px 10px 5px rgba(0,0,0,0.5);">
             <div class="col-8">
                 <div class="row flex-column h-100">
@@ -972,37 +1014,93 @@
         })
     </script>
 
-    <!-- navbar link active -->
+    <!-- navbar link active 暫時棄用 包在navbar link allactive -->
     <script>
+        // navbar link allactive會用到取消註解
         var elementList = document.querySelectorAll('.nav-link');
-        elementList.forEach(element => {
-            element.addEventListener('click', function () {
-                elementList.forEach(elementElse => {
-                    elementElse.classList.remove('active', 'click');
-                })
-                element.classList.add('active');
-                // 直接加入class因js單線程不會渲染，需要異步
-                // requestAnimationFrame setTimeout 二擇一
-                // setTimeout可以在最後加入需要延遲時間
-                // element.classList.add('click');
-                // requestAnimationFrame(function () {
-                //     element.classList.add('click');
-                // });
-                setTimeout(function () {
-                    element.classList.add('click');
-                }, 10);
+        // elementList.forEach(element => {
+        //     element.addEventListener('click', function () {
+        //         elementList.forEach(elementElse => {
+        //             elementElse.classList.remove('active', 'click');
+        //         })
+        //         element.classList.add('active');
+        // 直接加入class因js單線程不會渲染，需要異步
+        // requestAnimationFrame setTimeout 二擇一
+        // setTimeout可以在最後加入需要延遲時間
+        // element.classList.add('click');
+        // requestAnimationFrame(function () {
+        //     element.classList.add('click');
+        // });
+        //             setTimeout(function () {
+        //                 element.classList.add('click');
+        //             }, 10);
 
-            })
-        });
+        //         });
+
+        //     });
+        // </script>
+
+    <!-- navbar all active 滾動到相關頁面執行link效果 -->
+    <script>
+        function handleIntersection(entries, observer) {
+            entries.forEach(entry => {
+                var targetElement = entry.target;
+                if (entry.isIntersecting) {
+
+                    // observer.disconnect();
+
+                    // 在這裡執行你的動作或操作
+
+
+                    elementList.forEach(elementElse => {
+                        elementElse.classList.remove('active', 'click');
+                    })
+                    var targetElementNav = document.getElementById(targetElement.id + '-nav');
+                    console.log(targetElementNav + "目標");
+                    targetElementNav.classList.add('active');
+                    // 直接加入class因js單線程不會渲染，需要異步
+                    // requestAnimationFrame setTimeout 二擇一
+                    // setTimeout可以在最後加入需要延遲時間
+                    // element.classList.add('click');
+                    // requestAnimationFrame(function () {
+                    //     element.classList.add('click');
+                    // });
+                    setTimeout(function () {
+                        targetElementNav.classList.add('click');
+                    }, 500);
+
+                    // 重新觀察元素，創建一個新的 IntersectionObserver 實例
+                    if (entry.intersectionRatio === 0) {
+                        createObserver(targetElement);
+
+                    };
+
+                };
+
+            });
+        }
+
+        function createObserver(targetElement) {
+            var observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+            console.log(targetElement);
+            observer.observe(targetElement);
+        }
+
+        // 取得所有目標元素
+        var targetElements = document.querySelectorAll('.sub-body');
+
+        // 初始化 IntersectionObserver，為每個目標
+        targetElements.forEach(createObserver);
+        // Array.from(targetElements).forEach(createObserver);
     </script>
     <!-- arrow display -->
     <script>
-        const arrowElement = document.querySelectorAll('.arrow')
+        const arrowElement = document.querySelectorAll('.arrow');
         window.onload = () => {
             arrowElement.forEach((element) => {
                 setTimeout(() => {
                     element.style.display = 'inline-block';
-                }, 2500);
+                }, 1000);
             })
         }
     </script>
