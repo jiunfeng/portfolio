@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap5 -->
+    <link rel="stylesheet" href="/resource/css/bootstrap.min.css">
+    <title>Construction...</title>
+</head>
+<style>
+    @keyframes bounce {
+        from {
+            transform: translateY(0px)
+        }
+
+        to {
+            transform: translateY(-10px)
+        }
+    }
+
+
+    .bounce {
+        position: relative;
+        animation: bounce 1s infinite alternate;
+        left: 47%;
+        top: 100px;
+        transform: translateX(-50%);
+
+    }
+
+
+    .bgc {
+        position: absolute;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    body {
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="bgc" style="background-image: url(/resource/img/construction.jpg);height: 100vh;width: 100vh;">
+
+
+
+    </div>
+    <h1 class="bounce">施工中.....</h1>
+</body>
+
+</html>
