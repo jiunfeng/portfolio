@@ -933,9 +933,8 @@
                     <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
                     <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
                         <h5 class="card-title tc1 p-2">Portfolio</h5>
-                        <p class="tc2 p-2">介紹自己的網站
-                            最好期限欣賞台北適應，是啊未來完成規格房東不過內置標籤豪華，發行祝福將軍寫作人氣它們行動全部，此次形成。
-                        </p>
+                        <p class="tc2 p-2 pb-0 mb-0">個人首頁</p>
+                        <p class="tc2 p-2 pt-0">一頁式網站</p><br><br>
                         <div class="p-2">
                             <a class="p-2 project-card-link" href="https://github.com/jiunfeng/portfolio"
                                 target="_blank" rel="noopener">Source Code</a>
@@ -963,7 +962,7 @@
                                 <div class="col text-center">
                                     <img src="/resource/img/por01.png" alt=""
                                         style="z-index: auto;width: 100%;height: 100%;">
-                            
+
                                 </div>
                                 <div class="col m-4">
                                     專案目標:<br>
@@ -991,12 +990,16 @@
                                     style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
                     <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
                     <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
-                        <h5 class="card-title tc1 p-2">Discord bot</h5>
-                        <p class="tc2 p-2">群組多功能提醒機器人</p>
+                        <h5 class="card-title tc1 p-2">Google Cloud Platform</h5>
+                        <p class="tc2 p-2 pb-0 mb-0">Side Project deploy</p>
+                        <p class="tc2 p-2 pt-0">Docker Compose<br>Nginx Reverse proxy<br>NO-IP Domain name</p>
                         <div class="p-2">
-                            <a class="p-2 project-card-link" href="#">施工中</a>
-                            <!-- <a class="p-2 project-card-link" href="#">Live Demo</a> -->
+                            <a class="p-2" data-bs-toggle="modal" data-bs-target="#project-card03-Modal">▷▶點擊各專案查看詳細</a>
+                            <!-- <a class="p-2 project-card-link"
+                                href="http://jiunfengtzeng.freedynamicdns.org/projectb/">Live Demo</a> -->
                         </div>
+
+
                     </div>
                 </a>
                 <!-- Modal -->
@@ -1008,21 +1011,42 @@
                 <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header d-flex justify-content-center">
-                            <h5 class="modal-title ms-auto" id="project-card03-ModalLabel">Discord bot
+                            <h5 class="modal-title ms-auto" id="project-card03-ModalLabel">Google Cloud Platform
                             </h5>
                             <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
                         <div class="modal-body container">
-                            <div class="row">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero suscipit
-                                veritatis natus optio, vitae magni cum ullam quisquam fuga mollitia perspiciatis quia
-                                recusandae, eligendi provident a doloribus voluptatibus dicta amet. Voluptates facilis
-                                voluptatum tempora eum quaerat at fugiat saepe in eligendi, incidunt aliquid quibusdam
-                                beatae quod, odio dolorum dolorem ullam vel debitis officiis libero quas nam molestiae
-                                pariatur laudantium. Provident nostrum, iure mollitia cum quam sint inventore incidunt
-                                asperiores! Omnis perspiciatis ut dolor laudantium officiis eum quidem, expedita beatae
-                                cupiditate aspernatur corrupti dicta voluptatibus, dolore tempore, pariatur neque sequi
-                                illo doloribus minus quis accusantium fugiat eius optio maxime. A, velit!</div>
+                            <div class="row flex-column">
+                                <div class="col text-center">
+                                    <img src="/resource/img/gcp.png" alt=""
+                                        style="z-index: auto;width: 100%;height: 100%;">
+                                </div>
+                                <div class="col m-4">
+                                    專案目標:
+                                    讓各專案在網路上對外公開並能統一管理,使用GCP部署<br><br>
+
+                                    技術相關內容：<br><br>
+                                    1.使用Git submodule整合各專案<br>
+                                    <br>
+                                    2.NO-IP<br>
+                                    &emsp;- 獨立域名申請,使用DDNS使GCP VM動態IP綁定Domain name<br><br>
+                                    3.Docker<br>
+                                    &emsp;- Docker compose 一鍵部署<br>
+                                    &emsp;- Dockerfile 調整dockerhub image內容<br>
+                                    &emsp;- 內部網路建立<br><br>
+                                    4.GCP<br>
+                                    &emsp;- 中繼資料ssh <br>
+                                    &emsp;- VPC,防火牆限制PORT與白名單<br>
+                                    &emsp;- VM個體創建安裝工具與監控<br><br>
+                                    5.Nginx<br>
+                                    &emsp;- Proxy_pass反向代理二級目錄讓各專案有獨立url<br>
+                                    &emsp;- 靜態資源代理<br><br>
+
+
+
+                                </div>
+                            </div>
 
                         </div>
 
@@ -1031,6 +1055,53 @@
             </div>
             <!-- /project-card-03 -->
 
+
+            <!-- project-card-03-1 -->
+            <!-- <div class="col-3 project-card wow jackInTheBox" data-wow-delay="0.5s">
+                <a data-bs-toggle="modal" data-bs-target="#project-card03-Modal">
+                    <img class=" wow slideInDown" data-wow-delay="1s" src="/resource/img/project/03.webp" alt=""
+                        style="z-index: auto;width: 100%;height: 100%;"> -->
+            <!-- <div class="p-3 rounded-bottom-5  animate__animated animate__slideInDown animate__delay-3s"
+                                    style="background-color: white; width: 100%;transform: translateY(-10px);z-index: 0;"> -->
+            <!-- <div class="p-3 project-card-content rounded-bottom-5 wow slideInDown" data-wow-delay="0.5s"> -->
+            <!-- <div class="p-3 project-card-content rounded-bottom-5 wow project-card-content-ani">
+                        <h5 class="card-title tc1 p-2">Discord bot</h5>
+                        <p class="tc2 p-2">群組多功能提醒機器人</p>
+                        <div class="p-2">
+                            <a class="p-2 project-card-link" href="#">施工中</a> -->
+            <!-- <a class="p-2 project-card-link" href="#">Live Demo</a> -->
+            <!-- </div>
+                    </div>
+                </a> -->
+            <!-- Modal -->
+
+
+            <!-- </div>
+            <div class="modal fade" id="project-card03-Modal" tabindex="-1" aria-labelledby="project-card03-ModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center">
+                            <h5 class="modal-title ms-auto" id="project-card03-ModalLabel">Discord bot
+                            </h5>
+                            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <img src="/resource/img/gcp.png" alt=""
+                                        style="z-index: auto;width: 100%;height: 100%;">
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div> -->
+            <!-- /project-card-03-1 -->
 
         </div>
         <!-- about -->
